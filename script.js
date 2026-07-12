@@ -307,13 +307,9 @@ alert(result.message);
 
 catch(error){
 
-alert(
+    console.error("FULL ERROR:", error);
 
-"❌ Unable to connect to the server."
-
-);
-
-console.error(error);
+    alert(error.message);
 
 }
 
