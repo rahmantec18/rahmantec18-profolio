@@ -78,15 +78,13 @@ exports.bookAppointment = async (req, res) => {
 
     catch (error) {
 
-        console.error(error);
+    console.error("BOOK APPOINTMENT ERROR:", error);
 
-        return res.status(500).json({
+    return res.status(500).json({
+        success: false,
+        message: error.message
+    });
 
-            success: false,
-            message: "Something went wrong."
-
-        });
-
-    }
+}
 
 };
