@@ -35,7 +35,7 @@ exports.sendAdminEmail = async (data) => {
 
     const mailOptions = {
 
-        from: process.env.EMAIL_USER,
+        from: `"PROFOLIO" <${process.env.BREVO_LOGIN}>`,
 
         to: process.env.ADMIN_EMAIL,
 
@@ -110,7 +110,7 @@ exports.sendCustomerEmail = async (data) => {
 
     const mailOptions = {
 
-        from: process.env.EMAIL_USER,
+        from: `"PROFOLIO" <${process.env.BREVO_LOGIN}>`,
 
         to: data.email,
 
