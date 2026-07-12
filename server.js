@@ -3,8 +3,8 @@ const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
 
-console.log("EMAIL:", process.env.EMAIL_USER);
-console.log("PASS LENGTH:", process.env.EMAIL_PASS?.length);
+console.log("BREVO LOGIN:", process.env.BREVO_LOGIN);
+console.log("SMTP KEY LENGTH:", process.env.BREVO_SMTP_KEY?.length);
 
 const contactController = require("./controllers/contactController");
 
