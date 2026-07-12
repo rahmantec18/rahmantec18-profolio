@@ -5,13 +5,15 @@ const { BrevoClient } = require("@getbrevo/brevo");
 // ==========================================
 
 let brevo;
-if (process.env.BREVO_SMTP_KEY) {
+const apiKey = process.env.BREVO_API_KEY || process.env.BREVO_SMTP_KEY;
+
+if (apiKey) {
     brevo = new BrevoClient({
-        apiKey: process.env.BREVO_SMTP_KEY
+        apiKey: apiKey
     });
     console.log("✅ Brevo HTTP Client initialized successfully.");
 } else {
-    console.log("❌ WARNING: BREVO_SMTP_KEY is missing. Emails cannot be sent.");
+    console.log("❌ WARNING: BREVO_API_KEY / BREVO_SMTP_KEY is missing. Emails cannot be sent.");
 }
 
 // ==========================================
